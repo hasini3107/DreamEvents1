@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse our colorful gallery of weddings, birthdays, corporate events, and special celebrations planned by Dream Events.">
+  <meta name="keywords" content="event gallery, wedding photos, birthday events, corporate events, event planning gallery">
+  <meta name="author" content="Dream Events">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Event Gallery - Dream Events">
+  <meta property="og:description" content="A colorful showcase of our unforgettable events across weddings, birthdays, corporate, and special occasions.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dreamevents.com/gallery">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <title>Event Gallery - Dream Events</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav class="navbar">
+      <h1 class="logo">Dream Events</h1>
+      <ul class="nav-links">
+        <li><a href="{{ url_for('index') }}">Home</a></li>
+        <li><a href="{{ url_for('about') }}">About</a></li>
+        <li><a href="{{ url_for('services') }}">Services</a></li>
+        <li><a href="{{ url_for('gallery') }}" class="active">Gallery</a></li>
+        <li><a href="{{ url_for('contact') }}">Contact</a></li>
+      </ul>
+      <button class="menu-toggle" aria-label="Toggle navigation menu">☰</button>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero gallery-hero">
+    <div class="overlay">
+      <div class="hero-content">
+        <h2>Our Colorful Moments</h2>
+        <p>Weddings, birthdays, corporate events, and more</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filter Bar -->
+  <section class="filter-bar">
+    <div class="container">
+      <div class="filter-chips" role="tablist" aria-label="Gallery filters">
+        <button class="filter-chip active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button class="filter-chip" data-filter="wedding" role="tab" aria-selected="false">Weddings</button>
+        <button class="filter-chip" data-filter="birthday" role="tab" aria-selected="false">Birthdays</button>
+        <button class="filter-chip" data-filter="corporate" role="tab" aria-selected="false">Corporate</button>
+        <button class="filter-chip" data-filter="special" role="tab" aria-selected="false">Special</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Grid -->
+  <section class="gallery-section">
+    <div class="container">
+      <div class="gallery-grid">
+        <!-- Wedding -->
+        <figure class="gallery-item" data-category="wedding">
+          <img
+          src="https://www.realweddings.com.au/media/images/44180488_10212947019490598_878694611625705472.width-4096.jpg"
+          alt="Elegant wedding reception"
+          width="600">
+                  <figcaption>
+            <span class="badge wedding">Wedding</span>
+            Elegant wedding reception
+          </figcaption>
+        </figure>
+        <figure class="gallery-item" data-category="wedding">
+          <img
+          src="https://sumatraweddings.com/wp-content/uploads/sites/42132/2023/12/IMG_4617-1024x683.jpg"
+          alt="Outdoor Indian wedding ceremony"
+          width="600">
+                          <figcaption>
+            <span class="badge wedding">Wedding</span>
+            Outdoor wedding ceremony
+          </figcaption>
+        </figure>
+
+        <!-- Birthday -->
+        <figure class="gallery-item" data-category="birthday">
+          <img
+          src="https://static.wixstatic.com/media/3f6f49_39c3d482c3814d1a9b6effde55528b97~mv2.jpeg/v1/fill/w_824,h_534,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/WhatsApp%20Image%202024-02-22%20at%20012_43_20%20AM%20(2).jpeg"
+          alt="Vibrant birthday celebration"
+          width="600">
+                  <figcaption>
+            <span class="badge birthday">Birthday</span>
+            Vibrant birthday celebration
+          </figcaption>
+        </figure>
+        <figure class="gallery-item" data-category="birthday">
+          <img 
+          src="https://images.contentstack.io/v3/assets/bltcedd8dbd5891265b/bltce83a0c02a204252/6668df33526d4e41238e49ac/sweet-16-ideas-hero2.jpg?q=70&width=3840&auto=webp" 
+          alt="Sweet 16 Birthday Celebration" 
+          width="600">
+                  <figcaption>
+            <span class="badge birthday">Birthday</span>
+            Sweet 16 party
+          </figcaption>
+        </figure>
+
+        <!-- Corporate -->
+        <figure class="gallery-item" data-category="corporate">
+          <img 
+          src="https://www.srisowbarnikaadecorator.com/wp-content/uploads/2023/01/10-Tips-for-Professional-Corporate-Event-Planning.jpg" 
+          alt="Corporate event planning" 
+          width="600">
+                  <figcaption>
+            <span class="badge corporate">Corporate</span>
+            Corporate conference setup
+          </figcaption>
+        </figure>
+        <figure class="gallery-item" data-category="corporate">
+          <img 
+          src="https://media.licdn.com/dms/image/v2/D4D12AQGcjQYopfX1-Q/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1690199856774?e=2147483647&v=beta&t=ysAO2eguFY2HMz9Vou2p9NCpOnczsxUXBsQ-bcRRg20" 
+          alt="Product Launch Event" 
+          width="600">
+                  <figcaption>
+            <span class="badge corporate">Corporate</span>
+            Product launch event
+          </figcaption>
+        </figure>
+
+        <!-- Special -->
+        <figure class="gallery-item" data-category="special">
+          <img 
+          src="https://cdn1.matadornetwork.com/blogs/1/2018/09/Festival-in-Chiang-Mai-Thailand-1200x853.jpg" 
+          alt="Cultural Celebration in Chiang Mai" 
+          width="600">
+                  <figcaption>
+            <span class="badge special">Special</span>
+            Cultural celebration
+          </figcaption>
+        </figure>
+        <figure class="gallery-item" data-category="special">
+          <img 
+          src="https://www.lookingglassbc.com/wp-content/uploads/2022/06/Untitled-design-4-1.png" 
+          alt="20th Anniversary Gala" 
+          width="600">
+                  <figcaption>
+            <span class="badge special">Special</span>
+            Anniversary gala
+          </figcaption>
+        </figure>
+
+        <!-- Mixed -->
+        <figure class="gallery-item" data-category="wedding">
+          <img 
+          src="https://youthincmag.com/wp-content/uploads/2019/04/Wedding-trends-pinterest.jpg" 
+          alt="Indian Wedding Trends" 
+          width="600">
+                  <figcaption>
+            <span class="badge wedding">Wedding</span>
+            Decor details
+          </figcaption>
+        </figure>
+        <figure class="gallery-item" data-category="birthday">
+          <img src="https://images.squarespace-cdn.com/content/v1/59eb9dfd692ebe60a346d3b3/1593118006789-KCQ973QVJFTU6KGHOF34/tropical-birthday-party.jpg" alt="Tropical Birthday Party" width="1200" height="803" />
+
+                  <figcaption>
+            <span class="badge birthday">Birthday</span>
+            Kids party theme
+          </figcaption>
+        </figure>
+        <figure class="gallery-item" data-category="corporate">
+          <img src="https://cdn.prod.website-files.com/62d84b3d3ba446b2ec041a19/62d84b3d3ba446487d04363e_Team%20building%20activities.png" alt="Team Building Activities" />
+          <figcaption>
+            <span class="badge corporate">Corporate</span>
+            Team building activity
+          </figcaption>
+        </figure>
+        <figure class="gallery-item" data-category="special">
+          <img src="https://i0.wp.com/www.tusktravel.com/blog/wp-content/uploads/2019/10/Christmas-Celebrate-in-India.jpg?fit=1200%2C803&ssl=1" alt="Christmas Celebration in India" />
+          <figcaption>
+            <span class="badge special">Special</span>
+            Holiday celebration
+          </figcaption>
+        </figure>
+      </div>
+      <div class="no-results" aria-live="polite">No items match your filter.</div>
+      <div class="load-more-wrap">
+        <button id="load-more" class="btn">Load More</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container">
+      <h2>Inspired by Our Work?</h2>
+      <p>Let's create unforgettable memories for your next event</p>
+      <a href="{{ url_for('contact') }}" class="btn">Book Your Event</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Dream Events</h3>
+          <p>Making your events memorable with professional planning and creative execution.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('services') }}">Services</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Contact Info</h4>
+          <p>📧 info@dreamevents.com</p>
+          <p>📞 (555) 123-4567</p>
+          <p>📍 123 Event Street, City, State</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Dream Events. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</body>
+</html>

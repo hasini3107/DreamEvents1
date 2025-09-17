@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn about Dream Events - a professional event management company with years of experience in creating unforgettable weddings, birthdays, and corporate events.">
+  <meta name="keywords" content="about dream events, event planning company, professional event management, wedding planners, corporate event planners">
+  <meta name="author" content="Dream Events">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="About Dream Events - Professional Event Management">
+  <meta property="og:description" content="Discover our story and commitment to creating unforgettable events with professional planning and creative execution.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dreamevents.com/about">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <title>About Dream Events - Professional Event Management Company</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav class="navbar">
+      <h1 class="logo">Dream Events</h1>
+      <ul class="nav-links">
+        <li><a href="{{ url_for('index') }}">Home</a></li>
+        <li><a href="{{ url_for('about') }}" class="active">About</a></li>
+        <li><a href="{{ url_for('services') }}">Services</a></li>
+        <li><a href="{{ url_for('gallery') }}">Gallery</a></li>
+        <li><a href="{{ url_for('contact') }}">Contact</a></li>
+      </ul>
+      <button class="menu-toggle" aria-label="Toggle navigation menu">☰</button>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero about-hero">
+    <div class="overlay">
+      <div class="hero-content">
+        <h2>About Dream Events</h2>
+        <p>Creating unforgettable moments with passion, creativity, and precision</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Story Section -->
+  <section class="about-story">
+    <div class="container">
+      <div class="story-content">
+        <div class="story-text">
+          <h2>Our Story</h2>
+          <p class="lead">Founded in 2020, Dream Events has been transforming ordinary moments into extraordinary memories for over a decade.</p>
+          <p>What started as a small team of passionate event enthusiasts has grown into one of the most trusted names in event management. Our journey began with a simple belief: every event, no matter how big or small, deserves to be perfect.</p>
+          <p>Today, we've successfully planned and executed over 500 events, each one unique and memorable in its own way. From intimate backyard weddings to large-scale corporate conferences, our commitment to excellence remains unwavering.</p>
+        </div>
+<div class="story-image">
+  <div class="placeholder-image">
+    <img src="https://www.teamly.com/blog/wp-content/uploads/2023/09/Teamwork-Stories.png" 
+         alt="Our Journey Since 2020" width="600" height="500">
+  </div>
+</div>
+
+
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission & Values Section -->
+  <section class="mission-values">
+    <div class="container">
+      <h2>Our Mission & Values</h2>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon">🎯</div>
+          <h3>Excellence</h3>
+          <p>We strive for perfection in every detail, ensuring each event exceeds expectations and creates lasting memories.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">💡</div>
+          <h3>Creativity</h3>
+          <p>Our team brings innovative ideas and unique perspectives to make each event truly special and personalized.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🤝</div>
+          <h3>Trust</h3>
+          <p>We build lasting relationships with our clients through transparency, reliability, and consistent delivery.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">⚡</div>
+          <h3>Efficiency</h3>
+          <p>We optimize every process to ensure smooth execution while maintaining the highest quality standards.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+<section class="team-section">
+  <div class="container">
+    <h2>Meet Our Team</h2>
+    <p class="section-subtitle">The passionate professionals behind every successful event</p>
+    <div class="team-grid">
+
+      <div class="team-member">
+        <div class="member-image">
+          <img src="{{ url_for('static', filename='images/team/prasanna.jpg') }}" alt="Prasanna">
+        </div>
+        <h3>N. Prasanna</h3>
+        <p class="member-role">Founder & Creative Director</p>
+        <p class="member-bio">With 5+ years in event planning, Prasanna brings creativity and vision to every project.</p>
+      </div>
+
+      <div class="team-member">
+        <div class="member-image">
+          <img src="{{ url_for('static', filename='images/team/hasini.jpg') }}" alt="U. Hasini">
+        </div>
+        <h3>U. Hasini</h3>
+        <p class="member-role">Operations Manager</p>
+        <p class="member-bio">Hasini ensures flawless execution with her attention to detail and organizational skills.</p>
+      </div>
+
+      <div class="team-member">
+        <div class="member-image">
+          <img src="{{ url_for('static', filename='images/team/joshitha.jpg') }}" alt="CH. Joshitha">
+        </div>
+        <h3>CH. Joshitha</h3>
+        <p class="member-role">Wedding Specialist</p>
+        <p class="member-bio">Joshitha specializes in creating romantic and unforgettable wedding experiences.</p>
+      </div>
+
+      <div class="team-member">
+        <div class="member-image">
+          <img src="{{ url_for('static', filename='images/team/manu.jpg') }}" alt="S. Manu">
+        </div>
+        <h3>S. Manu</h3>
+        <p class="member-role">Event Coordinator</p>
+        <p class="member-bio">Manu coordinates logistics and vendors to keep every event running smoothly and on schedule.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  <!-- Stats Section -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number">200+</div>
+          <div class="stat-label">Events Completed</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">5</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">98%</div>
+          <div class="stat-label">Client Satisfaction</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">30+</div>
+          <div class="stat-label">Vendor Partners</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials">
+    <div class="container">
+      <h2>What Our Clients Say</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <p>"Dream Events made our wedding day absolutely perfect. Every detail was taken care of with such care and attention. We couldn't have asked for a better experience!"</p>
+          </div>
+          <div class="testimonial-author">
+            <strong>Jennifer & Mark</strong>
+            <span>Wedding Clients</span>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <p>"The team at Dream Events transformed our corporate conference into an engaging and memorable experience. Professional, efficient, and creative!"</p>
+          </div>
+          <div class="testimonial-author">
+            <strong>David Thompson</strong>
+            <span>CEO, TechCorp</span>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <p>"My daughter's sweet 16 was everything she dreamed of and more. The attention to detail and creativity exceeded all expectations."</p>
+          </div>
+          <div class="testimonial-author">
+            <strong>Lisa Martinez</strong>
+            <span>Birthday Party Client</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="cta">
+    <div class="container">
+      <h2>Ready to Create Your Dream Event?</h2>
+      <p>Let's work together to make your vision a reality</p>
+      <a href="{{ url_for('contact') }}" class="btn">Start Planning Today</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Dream Events</h3>
+          <p>Making your events memorable with professional planning and creative execution.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('services') }}">Services</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Contact Info</h4>
+          <p>📧 info@dreamevents.com</p>
+          <p>📞 +91 9493474277</p>
+          <p>📍 123 Event Street, City, State</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Dream Events. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</body>
+</html>

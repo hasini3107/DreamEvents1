@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore our comprehensive event management services including weddings, corporate events, birthday parties, and special celebrations. Professional planning with custom packages.">
+  <meta name="keywords" content="event management services, wedding planning, corporate events, birthday parties, event planning packages, professional event services">
+  <meta name="author" content="Dream Events">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Event Management Services - Dream Events">
+  <meta property="og:description" content="Professional event planning services for weddings, corporate events, and special celebrations. Custom packages available.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dreamevents.com/services">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <title>Event Management Services - Dream Events Professional Planning</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav class="navbar">
+      <h1 class="logo">Dream Events</h1>
+      <ul class="nav-links">
+        <li><a href="{{ url_for('index') }}">Home</a></li>
+        <li><a href="{{ url_for('about') }}">About</a></li>
+        <li><a href="{{ url_for('services') }}" class="active">Services</a></li>
+        <li><a href="{{ url_for('gallery') }}">Gallery</a></li>
+        <li><a href="{{ url_for('contact') }}">Contact</a></li>
+      </ul>
+      <button class="menu-toggle" aria-label="Toggle navigation menu">☰</button>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero services-hero">
+    <div class="overlay">
+      <div class="hero-content">
+    <h2>Our Services</h2>
+        <p>Comprehensive event planning solutions for every occasion</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Services Section -->
+  <section class="main-services">
+    <div class="container">
+      <h2>What We Offer</h2>
+      <p class="section-subtitle">From intimate gatherings to grand celebrations, we handle every detail with precision</p>
+      
+      <div class="services-grid">
+        <div class="service-item">
+          <div class="service-header">
+            <div class="service-icon">💒</div>
+            <h3>Wedding Planning</h3>
+          </div>
+          <p>Create your perfect wedding day with our comprehensive planning services. From venue selection to vendor coordination, we ensure every moment is magical.</p>
+          <ul class="service-features">
+            <li>✓ Venue selection & booking</li>
+            <li>✓ Vendor coordination</li>
+            <li>✓ Timeline management</li>
+            <li>✓ Budget planning</li>
+            <li>✓ Day-of coordination</li>
+            <li>✓ Guest list management</li>
+          </ul>
+          <div class="service-price">
+            <span class="price">Starting at 10,00000</span>
+            <a href="{{ url_for('contact') }}" class="btn">Get Quote</a>
+          </div>
+        </div>
+
+        <div class="service-item">
+          <div class="service-header">
+            <div class="service-icon">🎂</div>
+            <h3>Birthday Celebrations</h3>
+          </div>
+          <p>Make every birthday unforgettable with our creative party planning services. From themed decorations to entertainment, we bring your vision to life.</p>
+          <ul class="service-features">
+            <li>✓ Theme development</li>
+            <li>✓ Decorations & setup</li>
+            <li>✓ Entertainment booking</li>
+            <li>✓ Catering coordination</li>
+            <li>✓ Photography services</li>
+            <li>✓ Party favors & gifts</li>
+          </ul>
+          <div class="service-price">
+            <span class="price">Starting at 5,00,000</span>
+            <a href="{{ url_for('contact') }}" class="btn">Get Quote</a>
+          </div>
+        </div>
+
+        <div class="service-item">
+          <div class="service-header">
+            <div class="service-icon">🏢</div>
+            <h3>Corporate Events</h3>
+          </div>
+          <p>Professional corporate event management for conferences, seminars, product launches, and team building activities that impress and inspire.</p>
+          <ul class="service-features">
+            <li>✓ Conference planning</li>
+            <li>✓ Seminar organization</li>
+            <li>✓ Product launches</li>
+            <li>✓ Team building events</li>
+            <li>✓ AV & technical support</li>
+            <li>✓ Brand integration</li>
+          </ul>
+          <div class="service-price">
+            <span class="price">Starting at 25,00,000</span>
+            <a href="{{ url_for('contact') }}" class="btn">Get Quote</a>
+          </div>
+        </div>
+
+        <div class="service-item">
+          <div class="service-header">
+            <div class="service-icon">🎶</div>
+            <h3>Special Events</h3>
+          </div>
+          <p>From anniversaries to graduations, we create memorable special events that celebrate life's important milestones with style and sophistication.</p>
+          <ul class="service-features">
+            <li>✓ Anniversary parties</li>
+            <li>✓ Graduation celebrations</li>
+            <li>✓ Holiday parties</li>
+            <li>✓ Fundraising galas</li>
+            <li>✓ Award ceremonies</li>
+            <li>✓ Cultural celebrations</li>
+          </ul>
+          <div class="service-price">
+            <span class="price">Starting at 5,00,000</span>
+            <a href="{{ url_for('contact') }}" class="btn">Get Quote</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Packages Section -->
+  <section class="service-packages">
+    <div class="container">
+      <h2>Service Packages</h2>
+      <p class="section-subtitle">Choose the level of service that fits your needs and budget</p>
+      
+      <div class="packages-grid">
+        <div class="package-card">
+          <div class="package-header">
+            <h3>Essential</h3>
+            <div class="package-price">1,00,000</div>
+          </div>
+          <ul class="package-features">
+            <li>✓ Event consultation</li>
+            <li>✓ Vendor recommendations</li>
+            <li>✓ Timeline creation</li>
+            <li>✓ Basic coordination</li>
+            <li>✓ Email support</li>
+          </ul>
+          <a href="{{ url_for('contact') }}" class="btn-secondary">Choose Package</a>
+        </div>
+
+        <div class="package-card featured">
+          <div class="package-badge">Most Popular</div>
+          <div class="package-header">
+            <h3>Professional</h3>
+            <div class="package-price">5,00,000</div>
+          </div>
+          <ul class="package-features">
+            <li>✓ Everything in Essential</li>
+            <li>✓ Full vendor coordination</li>
+            <li>✓ Budget management</li>
+            <li>✓ Day-of coordination</li>
+            <li>✓ Phone & email support</li>
+            <li>✓ Site visits</li>
+          </ul>
+          <a href="{{ url_for('contact') }}" class="btn">Choose Package</a>
+        </div>
+
+        <div class="package-card">
+          <div class="package-header">
+            <h3>Premium</h3>
+            <div class="package-price">10,00,000</div>
+          </div>
+          <ul class="package-features">
+            <li>✓ Everything in Professional</li>
+            <li>✓ Custom design & themes</li>
+            <li>✓ Unlimited consultations</li>
+            <li>✓ Full event production</li>
+            <li>✓ 24/7 support</li>
+            <li>✓ Post-event follow-up</li>
+          </ul>
+          <a href="{{ url_for('contact') }}" class="btn-secondary">Choose Package</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="process-section">
+    <div class="container">
+      <h2>Our Process</h2>
+      <p class="section-subtitle">How we bring your vision to life</p>
+      
+      <div class="process-steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Consultation</h3>
+          <p>We meet to understand your vision, budget, and requirements for the perfect event.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>Planning</h3>
+          <p>Our team creates a detailed plan including timeline, budget, and vendor coordination.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>Execution</h3>
+          <p>We handle all the details, from setup to cleanup, ensuring everything runs smoothly.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">4</div>
+          <h3>Follow-up</h3>
+          <p>We follow up to ensure your satisfaction and gather feedback for future improvements.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <section class="why-choose-services">
+    <div class="container">
+      <h2>Why Choose Dream Events?</h2>
+      <div class="benefits-grid">
+        <div class="benefit-item">
+          <div class="benefit-icon">🎯</div>
+          <h3>Experience</h3>
+          <p>13+ years of experience in event planning with over 500 successful events.</p>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon">💡</div>
+          <h3>Creativity</h3>
+          <p>Unique and innovative ideas that make your event stand out from the rest.</p>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon">🤝</div>
+          <h3>Reliability</h3>
+          <p>Trusted by hundreds of clients with a 98% satisfaction rate.</p>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon">⚡</div>
+          <h3>Efficiency</h3>
+          <p>Streamlined processes that save you time and reduce stress.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="cta">
+    <div class="container">
+      <h2>Ready to Start Planning?</h2>
+      <p>Let's discuss your event and create something amazing together</p>
+      <a href="{{ url_for('contact') }}" class="btn">Get Started Today</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Dream Events</h3>
+          <p>Making your events memorable with professional planning and creative execution.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('services') }}">Services</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Contact Info</h4>
+          <p>📧 info@dreamevents.com</p>
+          <p>📞 (555) 123-4567</p>
+          <p>📍 123 Event Street, City, State</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Dream Events. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</body>
+</html>
