@@ -1,25 +1,29 @@
+import os
 from flask import Flask, render_template, request, flash, redirect, url_for
 from flask_mail import Mail, Message
-from twilio.rest import Client  # ✅ For SMS
+from twilio.rest import Client  # For SMS
 
 app = Flask(__name__)
-app.secret_key = "supersecretkey"
+app.secret_key = os.getenv("FLASK_SECRET_KEY", "supersecretkey")  # You can override in env
 
 # ------------------- Mail Configuration -------------------
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = 'hasiniunnamatla@gmail.com'
-app.config['MAIL_PASSWORD'] = 'upur hxxa dprq evkx'  # Gmail App Password
-app.config['MAIL_DEFAULT_SENDER'] = ('Dream Events', 'hasiniunnamatla@gmail.com')
+app.config['MAIL_USERNAME'] = os.getenv("MAIL_USERNAME")  # Your Gmail
+app.config['MAIL_PASSWORD'] = os.getenv("MAIL_PASSWORD")  # Gmail App Password
+app.config['MAIL_DEFAULT_SENDER'] = (
+    os.getenv("MAIL_SENDER_NAME", "Dream Events"),  # Default name if not set
+    os.getenv("MAIL_USERNAME")
+)
 
 mail = Mail(app)
 
 # ------------------- Twilio Configuration -------------------
-TWILIO_ACCOUNT_SID = "ACab114a7310397cdd55093ab04e186561"
-TWILIO_AUTH_TOKEN = "3adbf8f99561171e4840c5ea4178d64a"
-TWILIO_PHONE_NUMBER = "+18603904160"   # ✅ Fixed: No spaces
-MY_PHONE_NUMBER = "+919493474277"      # Your personal number (India +91)
+TWILIO_ACCOUNT_SID = os.getenv("TWILIO_ACCOUNT_SID")
+TWILIO_AUTH_TOKEN = os.getenv("TWILIO_AUTH_TOKEN")
+TWILIO_PHONE_NUMBER = os.getenv("TWILIO_PHONE_NUMBER")
+MY_PHONE_NUMBER = os.getenv("MY_PHONE_NUMBER")
 
 twilio_client = Client(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN)
 
@@ -55,7 +59,6 @@ def contact():
         print("Phone:", phone)
         print("Message:", message)
 
-        # Email content
         body = f"""
         You have a new contact form submission:
 
@@ -66,17 +69,17 @@ def contact():
         """
 
         try:
-            # ✅ Send Email
+            # Send Email
             msg = Message(
                 subject="📩 New Contact Form Submission",
-                recipients=["hasiniunnamatla@gmail.com"],
+                recipients=[os.getenv("MAIL_USERNAME")],
                 body=body,
                 reply_to=email
             )
             mail.send(msg)
             print("✅ Email sent successfully")
 
-            # ✅ Send SMS
+            # Send SMS
             sms_body = f"📩 New Contact Form:\nName: {name}\nEmail: {email}\nPhone: {phone}\nMsg: {message}"
             twilio_client.messages.create(
                 body=sms_body,
@@ -95,13 +98,13 @@ def contact():
 
     return render_template('contact.html')
 
-# 🔹 Test route for Email
+# Test route for Email
 @app.route('/test-mail')
 def test_mail():
     try:
         msg = Message(
             subject="✅ Test Email from Flask",
-            recipients=["hasiniunnamatla@gmail.com"],
+            recipients=[os.getenv("MAIL_USERNAME")],
             body="This is a test email from your Flask app."
         )
         mail.send(msg)
@@ -111,7 +114,7 @@ def test_mail():
         print("❌ Test mail failed:", str(e))
         return f"❌ Test mail failed: {str(e)}"
 
-# 🔹 Test route for SMS
+# Test route for SMS
 @app.route('/test-sms')
 def test_sms():
     try:
